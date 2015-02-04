@@ -589,7 +589,7 @@ with class name `hpce::your_login::direct_fourier_transform_chunked`, and name
 
 Change the parfor loop to use a chunk size K, where K is either
 specified as a decimal integer using the environment
-variable `HPCE_OUTER_K`, or if it is not set, you should use
+variable `HPCE_DIRECT_OUTER_K`, or if it is not set, you should use
 a sensible default. For example, if the user does:
 
     export HPCE_DIRECT_OUTER_K=16
@@ -733,7 +733,7 @@ so the natural choice is to combine them together.
 Create a new implementation called `fast_fourier_transform_combined`,
 using the conventions for naming from before, and integrate
 both forms of parallelism. This version should use either or both
-of the `HPCE_FFT_LOOP_K` and `HPCE_FFT_RECURSE_K` variables, and
+of the `HPCE_FFT_LOOP_K` and `HPCE_FFT_RECURSION_K` variables, and
 fall back on a default if either or both is not set.
 
 Exploring the performance of this one is quite interesting,
@@ -800,7 +800,7 @@ example, something like:
 
     for K="1 2 4 8 16 32"; do
         echo $K;
-        export HPCE_FFT_RECURSE_K=$K;
+        export HPCE_FFT_RECURSION_K=$K;
         ./time_fourier_transform hpce.your_login.fast_fourier_transform_taskgroup
     end
     
