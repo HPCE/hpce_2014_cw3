@@ -119,7 +119,7 @@ makefile, or some other mechanism), then you should
 be able to test and time the two existing transforms.
 For example, you can do:
 
-    time_fourier_transform
+    test_fourier_transform
 
 which will list the two existing transforms, and:
 
