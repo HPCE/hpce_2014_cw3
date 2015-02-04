@@ -521,7 +521,7 @@ We now have the choice of executing it directly:
 
 or in parallel with chunk size of K:
 
-    tbb::parallel_for(range, f, tbb::simple_partitioner);
+    tbb::parallel_for(range, f, tbb::simple_partitioner());
 
 The final `tbb::simple_partitioner` argument is telling
 TBB "I know what I am doing; I have decided that K is the
