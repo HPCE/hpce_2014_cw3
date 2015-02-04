@@ -1,4 +1,4 @@
-1. Overview
+0. Overview
 ===========
 
 This coursework explores parallelism using threaded-building
@@ -23,6 +23,9 @@ and to compare and contrast the performance benefits of them.
 _Dislaimer: Never write your own fourier transform for production
 use. Everything you do here will be slower and less accurate than
 existing FFT libraries._
+
+_Note: Thanks to @bwh10 for identifying a number of problems in
+the instructions, and supplying solutions._
 
 1. Evironment and setup
 =======================
