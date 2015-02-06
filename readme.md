@@ -517,7 +517,7 @@ space:
         for(unsigned i=chunk.begin(); i!=chunk.end(); i++ ){
             y[i]=myLoop(i);
         }
-    }, tbb::simple_partitioner);
+    }, tbb::simple_partitioner());
 
 this is still equivalent both to the original loop, but
 now we have more control. If we unpack it a bit, we
@@ -546,7 +546,7 @@ or in parallel with chunk size of K:
 
     tbb::parallel_for(range, f, tbb::simple_partitioner());
 
-The final `tbb::simple_partitioner` argument is telling
+The final `tbb::simple_partitioner()` argument is telling
 TBB "I know what I am doing; I have decided that K is the
 best chunk size." We could alternatively leave it blank,
 which would default to the auto partitioner, which would
@@ -686,8 +686,8 @@ so if we look at the value of w at the start of each
 iteration we have:
 
 1. j=0, w=1
-2. j=1, w=1*wn
-3. j=2, w=2*wn*wn
+2. j=1, w=1 * wn
+3. j=2, w=2 * wn * wn
 
 Generalising, we find that for iteration j, w=wn^j.
 
