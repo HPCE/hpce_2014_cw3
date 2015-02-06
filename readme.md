@@ -90,6 +90,26 @@ than GNU `make`, and cannot do many of the more advanced
 things such as parallel build, or using eval to create
 rules at make-time.
 
+_Note: I didn't do a very good job of explaining what you
+need to do to get started, particularly on different platforms.
+There is some [discussion here](https://github.com/HPCE/hpce_2014_cw3/issues/5),
+thanks to @AugustineTan and @bwh10._
+
+TBB should work well in Linux, OSX, MinGW via g++, and
+Windows via Visual Studio. Where it won't work (annoyingly)
+is under Cygwin.
+
+Once you have got TBB installed (the [lecture notes](http://cas.ee.ic.ac.uk/people/dt10/teaching/2014/hpce/hpce-lec6-introducing-tbb.pdf)
+may help, or you can use your package manager), to get things
+to compile in windows, you should drop into a visual studio
+command prompt, then do:
+
+    nmake -f makefile.mk all
+
+For linux you should be able to use:
+
+    make all
+
 When I build your code, I will not be using your makefiles,
 and will be compiling your .cpp files directly. There will
 be a copy of TBB 4.2 available in the environment that your
