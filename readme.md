@@ -732,8 +732,8 @@ task based version, so there is only one kind of parallelism.
 
 ### Apply the loop transformation
 
-Apply the loop transformation described above,
-without introducing any parallelism, and check it works
+First apply the loop transformation described above,
+_without_ introducing any parallelism, and check it works
 with various values of K, via the environment variable
 `HPCE_FFT_LOOP_K`.
 
@@ -742,6 +742,19 @@ you need to worry about m < K at the leaves of the
 recursion. A simple solution is to use a guarded
 version, such that if m < = K the original code is used,
 and if m > K the new code is used.
+
+Once you have got it working with a non parallel chunked
+loop, replace the outer loop with a `parallel_for` loop
+using `simple_partitioner`, and check that it still works
+for different values of `HPCE_FFT_LOOP_K`. You will
+probably not see much speed-up here, as the dominant
+cost tends to be the recursive part.
+
+_Note: edited to make the instructions clearer, as
+@bwh10 correctly pointed out it [was ambiguous](https://github.com/HPCE/hpce_2014_cw3/issues/4).
+The intent is for people to get the chunking working first
+in a sequential context, then to add the parallelism (the
+first part is more complex, the second part is easy)._
 
 As before, if `HPCE_FFT_LOOP_K` is not set, choose a sensible
 default based on your analysis of the scaling with n, and/or
