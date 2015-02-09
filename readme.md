@@ -880,7 +880,7 @@ Trouble-shooting tips
 
 I'm collecting together the issues which might help people here:
 
-`In lambda function: ... error: ‘this’ was not captured for this lambda function`
--------------------------------------------------------------------------------
-Odd g++ bug, with [https://github.com/HPCE/hpce_2014_cw3/issues/6](fix). thanks to @almanarif:
+- `In lambda function: ... error: ‘this’ was not captured for this lambda function`
+
+  Odd g++ bug, with [fix](https://github.com/HPCE/hpce_2014_cw3/issues/6). thanks to @almanarif.
 
