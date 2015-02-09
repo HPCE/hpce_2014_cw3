@@ -853,13 +853,35 @@ for you to know (or show) what your did.
 Double-check your names all match up, as I'll be trying
 to create your transforms both by direct instantiation,
 and by pulling them out of the transform registry. Also,
-don't forget that "your_login" does actually mean your
-login needs to be substituted in wherever it is mentioned.
+don't forget that "your_login" or `$LOGIN` does actually mean your
+login (your imperial login) needs to be substituted in
+wherever it is mentioned.
+
+Specific files (with appropriately named classes) which should
+exist are:
+
+- `src/$LOGIN/direct_fourier_transform_parfor.cpp`
+- `src/$LOGIN/direct_fourier_transform_chunked.cpp`
+- `src/$LOGIN/fast_fourier_transform_combined.cpp`
+- `src/$LOGIN/fast_fourier_transform_parfor.cpp`
+- `src/$LOGIN/fast_fourier_transform_taskgroup.cpp`
+- `src/$LOGIN/fast_fourier_transform_opt.cpp`
+
+However, you can put other files in if you want. Performance
+results are always interesting, though not required.
+
+and specific transforms that should be registered are:
+- `hpce.$LOGIN.direct_fourier_transform_parfor`
+- `hpce.$LOGIN.direct_fourier_transform_chunked`
+- `hpce.$LOGIN.fast_fourier_transform_combined`
+- `hpce.$LOGIN.fast_fourier_transform_parfor`
+- `hpce.$LOGIN.fast_fourier_transform_taskgroup`
+- `hpce.$LOGIN.fast_fourier_transform_opt`
 
 Hopefully this should all still be in a git repository, and you
 will also have a private remote repository in the HPCE
-organisation. "Push" your local repository to your private
-remote repository, making sure all the source files have
+organisation. ["Push" your local repository to your private
+remote repository](git.md), making sure all the source files have
 been staged and added. (You can do a push whenever you
 want as you go (it's actually a good idea), but make sure
 you do one for "submission"). You may want to do a "clone" into
