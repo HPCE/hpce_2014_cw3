@@ -874,3 +874,13 @@ I would suggest compiling and running your submission
 in AWS, just to get the feel of it. A correctly written
 submission should compile anywhere, with no real depencency
 on the environment, but it is good to try things out.
+
+Trouble-shooting tips
+=====================
+
+I'm collecting together the issues which might help people here:
+
+`In lambda function: ... error: ‘this’ was not captured for this lambda function`
+-------------------------------------------------------------------------------
+Odd g++ bug, with [https://github.com/HPCE/hpce_2014_cw3/issues/6](fix). thanks to @almanarif:
+
