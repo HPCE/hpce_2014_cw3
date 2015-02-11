@@ -560,7 +560,7 @@ We want to set a good chunk size, but we also want it to be
 user tunable for a specific machine. So we are going to allow the
 user to choose a value K at run-time using an environment variable.
 
-The function [`getopt`](http://www.cplusplus.com/reference/cstdlib/getenv/)
+The function [`getenv`](http://www.cplusplus.com/reference/cstdlib/getenv/)
 allows a program to read [environment variables](http://en.wikipedia.org/wiki/Environment_variable)
 at run-time. So if I choose an environment variable called HPCE_X, I could
 create a C++ program `read_x`:
@@ -606,7 +606,11 @@ variable called "X".
 Create a new class `src/your_login/direct_fourier_transform_chunked.cpp` based
 on `src/your_login/direct_fourier_transform_parfor.cpp`
 with class name `hpce::your_login::direct_fourier_transform_chunked`, and name
-`hpce.your_login.direct_fourier_transform_parfor_chunked`.
+`hpce.your_login.direct_fourier_transform_chunked`.
+
+_Note: there was [a typo in the name](https://github.com/HPCE/hpce_2014_cw3/issues/10)
+here originally (though not in the list at the end). Thanks to @davidfof13 for
+the catch._
 
 ### Add parameterisable chunking to your class
 
