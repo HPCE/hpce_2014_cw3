@@ -633,6 +633,9 @@ original parfor iteration is O(n). But on the other side,
 you always want enough tasks to keep the processors occupied
 (no matter how many there are), so you can't set the chunk size to K=n.
 
+_Note: some further [discussion here](https://github.com/HPCE/hpce_2014_cw3/issues/12)
+about what "sensible default" could mean._
+
 5. Adjustable grain size for the FFT
 ====================================
 
